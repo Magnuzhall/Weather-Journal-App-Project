@@ -52,7 +52,7 @@ const postData = async ( url = '', data = {} ) => {
 //Add event listener to button with a callback function when button is clicked
 generateButton.addEventListener('click', clickedButton);
 
-//Callback function 
+//Call the GET function 
 function clickedButton() {
     //User input variables
     const zipCode = document.querySelector('#zip').value;
@@ -74,10 +74,10 @@ const updateUI = async () => {
     const request = await fetch('/all');
     try {
         const allData = await request.json();
-        currentDate.innerHTML = `Date: ${allData[0].date}`;
-        cityName.innerHTML = `City: ${allData[0].name}`;
-        currentTemperature.innerHTML = `Temperature: ${allData[0].temp}`;
-        userContent.innerHTML = `User entry: ${allData[0].content}`;
+        currentDate.innerHTML = `Date: ${allData.date}`;
+        cityName.innerHTML = `City: ${allData.name}`;
+        currentTemperature.innerHTML = `Temperature: ${allData.temp}`;
+        userContent.innerHTML = `User entry: ${allData.content}`;
     }
     catch(error) {
         console.log("error", error);
