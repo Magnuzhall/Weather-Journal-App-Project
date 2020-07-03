@@ -52,7 +52,7 @@ const postData = async ( url = '', data = {} ) => {
 //Add event listener to button with a callback function when button is clicked
 generateButton.addEventListener('click', clickedButton);
 
-//Call the GET function 
+//Callback function 
 function clickedButton() {
     //User input variables
     const zipCode = document.querySelector('#zip').value;
