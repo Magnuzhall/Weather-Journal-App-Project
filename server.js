@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+projectData = {};
 
 // Express to run server and routes
 const express = require('express');
@@ -43,13 +43,11 @@ function sendData (request, response) {
 app.post('/dataEntry', dataEntry);
 
 function dataEntry (request, response) {
-    console.log(request.body);
-    newDataEntry = {
-        date: request.body.date,
-        name: request.body.name,
-        temp: request.body.temp,
-        content: request.body.content
-    }
-    projectData.push(newDataEntry);
+    const d = request.body;
+    console.log(d);
+    projectData['date'] = d.date;
+    projectData['name'] = d.name;
+    projectData['temp'] = d.temp;
+    projectData['content'] = d.content;
 }
 
